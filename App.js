@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 import { store } from "./src/store/";
 
 import Root from "./src/components/Root/";
-// import "./ReactotronConfig";
 
 const ReduxApp = () => (
   <Provider store={store}>

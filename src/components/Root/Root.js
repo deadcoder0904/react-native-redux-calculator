@@ -12,21 +12,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        boxHeight: 0,
-        controlsPadding: 0,
+      boxHeight: 0,
+      controlsPadding: 0
     };
   }
 
-  measureControls = (e) => {
-      const { height } = e.nativeEvent.layout;
-      const padding = height * 0.01; // 1% of height
-      this.setState({ controlsPadding: padding });
-  }
+  measureControls = e => {
+    const { height } = e.nativeEvent.layout;
+    const padding = height * 0.01; // 1% of height
+    this.setState({ controlsPadding: padding });
+  };
 
-  measureBox = (e) => {
-      const { height } = e.nativeEvent.layout;
-      this.setState({ boxHeight: height });
-  }
+  measureBox = e => {
+    const { height } = e.nativeEvent.layout;
+    this.setState({ boxHeight: height });
+  };
 
   render() {
     return (

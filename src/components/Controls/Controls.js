@@ -6,9 +6,14 @@ import styles from "./styles";
 
 const Controls = props => (
   <View style={styles.controls} onLayout={props.measureControls}>
-    <View style={[styles.pretender, {
-      height: (props.boxHeight / 2) + props.controlsPadding,
-    }]} />
+    <View
+      style={[
+        styles.pretender,
+        {
+          height: props.boxHeight / 2 + props.controlsPadding
+        }
+      ]}
+    />
 
     <View style={styles.row}>
       <Box

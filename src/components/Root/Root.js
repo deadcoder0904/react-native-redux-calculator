@@ -11,22 +11,10 @@ import styles from "./styles";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-        boxHeight: 0,
-        controlsPadding: 0,
-    };
+    this.state = { top: 0 };
   }
 
-  measureControls = (e) => {
-      const { height } = e.nativeEvent.layout;
-      const padding = height * 0.01; // 1% of height
-      this.setState({ controlsPadding: padding });
-  }
-
-  measureBox = (e) => {
-      const { height } = e.nativeEvent.layout;
-      this.setState({ boxHeight: height });
-  }
+  _onLayout = ({ nativeEvent: { layout: { y } } }) => this.setState({ top: y });
 
   render() {
     return (
@@ -37,10 +25,8 @@ class App extends Component {
           <Result content={this.props.result} />
           <Controls
             {...this.props}
-            measureControls={this.measureControls}
-            controlsPadding={this.state.controlsPadding}
-            measureBox={this.measureBox}
-            boxHeight={this.state.boxHeight}
+            onLayout={this._onLayout}
+            top={this.state.top}
           />
         </View>
       </View>

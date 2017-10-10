@@ -5,8 +5,8 @@ import { Box } from "../Box/";
 import styles from "./styles";
 
 const Controls = props => (
-  <View style={styles.controls}>
-    <View style={[styles.row, styles.first]}>
+  <View style={styles.controls} onLayout={props.onLayout}>
+    <View style={[styles.row, { position: "absolute", top: props.top }]}>
       <Box
         style={[styles.box, styles.green]}
         content="AC"

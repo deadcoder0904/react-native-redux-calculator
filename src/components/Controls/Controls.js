@@ -5,9 +5,14 @@ import { Box } from "../Box/";
 import styles from "./styles";
 
 const Controls = props => (
-  <View style={styles.controls} onLayout={props.onLayout}>
-    <View style={[styles.row, { position: "absolute", top: props.top }]}>
+  <View style={styles.controls} onLayout={props.measureControls}>
+    <View style={[styles.pretender, {
+      height: (props.boxHeight / 2) + props.controlsPadding,
+    }]} />
+
+    <View style={styles.row}>
       <Box
+        onLayout={props.measureBox}
         style={[styles.box, styles.green]}
         content="AC"
         onPress={props.clearResult}
@@ -28,7 +33,7 @@ const Controls = props => (
         onPress={() => props.saveExpression("/")}
       />
     </View>
-    <View style={[styles.row, styles.second]}>
+    <View style={styles.row}>
       <Box
         style={[styles.box, styles.black]}
         content="7"
@@ -50,7 +55,7 @@ const Controls = props => (
         onPress={() => props.saveExpression("*")}
       />
     </View>
-    <View style={[styles.row, styles.third]}>
+    <View style={styles.row}>
       <Box
         style={[styles.box, styles.black]}
         content="4"
@@ -72,7 +77,7 @@ const Controls = props => (
         onPress={() => props.saveExpression("-")}
       />
     </View>
-    <View style={[styles.row, styles.fourth]}>
+    <View style={styles.row}>
       <Box
         style={[styles.box, styles.black]}
         content="1"
@@ -94,7 +99,7 @@ const Controls = props => (
         onPress={() => props.saveExpression("+")}
       />
     </View>
-    <View style={[styles.row, styles.fifth]}>
+    <View style={styles.row}>
       <Box
         style={[styles.box, styles.double, styles.black]}
         content="0"

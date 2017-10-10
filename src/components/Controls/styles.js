@@ -3,19 +3,22 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   controls: {
     flex: 1,
-    backgroundColor: "#333E52"
+    backgroundColor: "#333E52",
+    padding: "1%"
   },
+  pretender: {
+    backgroundColor: "#3CB6EE",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+},
   row: {
     flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
-    position: "relative"
+    position: "relative",
   },
-  first: { top: -25 },
-  second: { top: -20 },
-  third: { top: -15 },
-  fourth: { top: -10 },
-  fifth: { top: -5 },
   box: {
     justifyContent: "center",
     alignItems: "center",

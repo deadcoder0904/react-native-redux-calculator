@@ -11,13 +11,13 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 0,
     left: 0,
-    right: 0,
-},
+    right: 0
+  },
   row: {
     flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
-    position: "relative",
+    position: "relative"
   },
   box: {
     justifyContent: "center",
